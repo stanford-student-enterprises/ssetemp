@@ -1,0 +1,12 @@
+<a class="brand" href="/">SSETemp</a>
+<ul class="nav">
+    <li {% if request.path == "/" %}class="active"<{% endif %}><a href="/">Home</a></li>
+</ul>
+<ul class="nav secondary-nav">
+    {% if user.is_authenticated %}
+        <li {% if request.path == "/profiles/me/" %}class="active"<{% endif %}><a href="/profiles/me/">My Profile</a></li>
+        <li><a href="/accounts/logout/">Logout</a></li>
+    {% else %}
+        <li><a href="/accounts/login/">Log In</a></li>
+    {% endif %}
+</ul>
